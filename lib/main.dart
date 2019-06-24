@@ -8,22 +8,35 @@ class MyApp extends StatelessWidget{
     return MaterialApp(
       title: 'ZJR-NB',
       home: Scaffold(
-        appBar: new AppBar(title: new Text('NB-ZJR'),),
-        body: new ListView(
+        appBar: new AppBar(title: new Text('布局'),),
+        body: new Row(
           children: <Widget>[
-            new ListTile(
-              leading: new Icon(Icons.ac_unit),
-              title: new Text('ac_unit'),
+             new RaisedButton(
+                onPressed: (){},
+                color: Colors.limeAccent,
+                child: Text('limeAccent'),
+              ),
+            Expanded(
+              child: new RaisedButton(
+                onPressed: (){},
+                color: Colors.blueGrey,
+                child: Text('blueGrey'),
+              ),
             ),
-            new Image.network('https://jspang.com/images/Redux_index.png'),
-            new Image.network('https://jspang.com/images/bilibili_count.jpg'),
-            new Image.network('https://jspang.com/images/react16_image.png'),
-            new Image.network('https://jspang.com/images/Flutter_shop.png'),
-            new Image.network('https://jspang.com/images/Flutter_shop.png'),
-            new Image.network('https://jspang.com/images/Flutter_shop.png'),
+            new RaisedButton(
+              onPressed: (){},
+              color: Colors.limeAccent,
+              child: Text('limeAccent'),
+            ),
+            /* new RaisedButton(
+              onPressed: (){},
+              color: Colors.blueGrey,
+              child: Text('blueGrey'),
+            ), */
           ],
-        ),
+        )
       ),
     );
   }
 }
+
