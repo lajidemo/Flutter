@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Administrator\\Desktop\\first_flutter\\hello_world\\build\\app\\intermediates\\res\\merged\\debug\\values_values.arsc.flat",
+            "outputFile": "C:\\Users\\Program_The_Ape\\Desktop\\Flutter\\Flutter\\build\\app\\intermediates\\res\\merged\\debug\\values_values.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\Administrator\\Desktop\\first_flutter\\hello_world\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "C:\\Users\\Program_The_Ape\\Desktop\\Flutter\\Flutter\\android\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
