@@ -5,46 +5,46 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context){
-    var stack = new Stack(
-      alignment: FractionalOffset(0.5, 0.8),
-      children: <Widget>[
-        new CircleAvatar(
-          backgroundImage: new NetworkImage('https://cdn.jsdelivr.net/gh/flutterchina/flutter-in-action@1.0/docs/imgs/book.jpg'),
-          radius: 100.0,
-        ),
-        /* new Container(
-          child: new Text('庄嘉仁最屌！！！',
-            style: TextStyle(
-              color: Colors.teal,
-              fontSize: 20.0,
-            ),
-          ),
-          padding: EdgeInsets.all(5.0),
-          decoration: new BoxDecoration(
-            color: Colors.amber,
-          ),
-        ) */
-        new Positioned( // 固定定位
-          top: 10.0,
-          left: 10.0,
-          child: Text('怎么还不回来啊'),
-        ),
-        /* new Positioned(
-          bottom: 10.0,
-          right: 10.0,
-          child: Text('快回来啊'),
-        ), */
-      ],
-    );
     return MaterialApp(
       title: 'ZJR-NB',
-      home: Scaffold(
-        appBar: new AppBar(title: new Text('布局'),),
-        body: Center(
-          child: stack,
+      home: FirstScreen(),
+    );
+  }
+}
+
+class FirstScreen extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(title: Text('查看商品详情页'),),
+      body: Center(
+        child: RaisedButton(
+          child: Text('点击查看商品详情'),
+          onPressed: (){
+            Navigator.push(context, MaterialPageRoute(
+              builder: (context) => SecondScreen()
+            ));
+            // Navigator.replace(context,FirstScreen(),SecondScreen());
+          },
         ),
       ),
     );
   }
 }
 
+class SecondScreen extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(title: Text('庄嘉仁的商品详情'),),
+      body: Center(
+        child: RaisedButton(
+          child: Text('返回'),
+          onPressed: (){
+            Navigator.pop(context);
+          },
+        ),
+      ),
+    );
+  }
+}
