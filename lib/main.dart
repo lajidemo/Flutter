@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:hello_world/components/bottomNavigationBarDemo.dart';
+import 'package:hello_world/components/drowerDemo.dart';
+import 'package:hello_world/components/listviewdemo.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,7 +13,7 @@ class MyApp extends StatelessWidget{
       title: '庄嘉仁',
       home: Home(),
       theme: ThemeData(
-        primarySwatch: Colors.yellow,
+        primarySwatch: Colors.deepPurple,
         highlightColor: Color.fromRGBO(255, 255, 255, 0.5), // 点击区域的颜色
         splashColor: Colors.white70, // 点击时水波纹的颜色
       ),
@@ -19,6 +22,7 @@ class MyApp extends StatelessWidget{
 }
 
 class Home extends StatelessWidget{
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -26,11 +30,11 @@ class Home extends StatelessWidget{
       child: Scaffold(
         backgroundColor: Colors.grey[100],
         appBar: AppBar(
-          title: Text('AppBar'),
+          title: Text('ZhuangJR'),
           elevation: 30.0, // 头部阴影
           bottom: TabBar(
             unselectedLabelColor: Colors.black38, // 未激活的颜色
-            indicatorColor: Colors.black54, // 下划线激活的颜色
+            indicatorColor: Colors.yellow[400], // 下划线激活的颜色
             indicatorSize: TabBarIndicatorSize.label, // 下划线激活的长度
             indicatorWeight: 2.0,  // 下划线激活的高度
             tabs: <Widget>[
@@ -59,42 +63,16 @@ class Home extends StatelessWidget{
         ),
         body: TabBarView( // 配合TabBar使用
           children: <Widget>[
-            Icon(Icons.local_florist,size: 128.0,color: Colors.black12,),
+            ListViewDemo(),
             Icon(Icons.change_history,size: 128.0,color: Colors.black12,),
             Icon(Icons.directions_bike,size: 128.0,color: Colors.black12,),
           ],
         ),
         // endDrawer: Text('this is drawer'), // 右边抽屉
-        drawer: Drawer(
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: <Widget>[
-              DrawerHeader(
-                child: Text('header'.toUpperCase()),
-                decoration: BoxDecoration(color: Colors.grey[100]),
-              ),
-              ListTile(
-                title: Text('Messages',textAlign: TextAlign.right,),
-                leading: Icon(Icons.message,color: Colors.black12,size: 22.0,), // 左边显示
-                trailing: Icon(Icons.message,color: Colors.black12,size: 22.0,), // 右边显示
-                onTap: () => Navigator.pop(context),
-              ),
-              ListTile(
-                title: Text('Favorite',textAlign: TextAlign.right,),
-                leading: Icon(Icons.favorite,color: Colors.black12,size: 22.0,),
-                trailing: Icon(Icons.favorite,color: Colors.black12,size: 22.0,),
-                onTap: () => Navigator.pop(context),
-              ),
-              ListTile(
-                title: Text('Settings',textAlign: TextAlign.right,),
-                leading: Icon(Icons.settings,color: Colors.black12,size: 22.0,),
-                trailing: Icon(Icons.settings,color: Colors.black12,size: 22.0,),
-                onTap: () => Navigator.pop(context),
-              ),
-            ],
-          ),
-        ),
+        drawer: DrawerDemo(),
+        bottomNavigationBar: BottomNavigationBarDemo(),
       ),
     );
   }
 }
+
