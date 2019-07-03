@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hello_world/components/bottomNavigationBarDemo.dart';
-import 'package:hello_world/components/drowerDemo.dart';
-import 'package:hello_world/components/listviewdemo.dart';
+import 'package:hello_world/components/basic_demo.dart';
+import 'package:hello_world/components/bottom_navigation_bar_demo.dart';
+import 'package:hello_world/components/drower_demo.dart';
+import 'package:hello_world/components/listview_demo.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget{
       title: '庄嘉仁',
       home: Home(),
       theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
+        primarySwatch: Colors.yellow, // 主题颜色
         highlightColor: Color.fromRGBO(255, 255, 255, 0.5), // 点击区域的颜色
         splashColor: Colors.white70, // 点击时水波纹的颜色
       ),
@@ -64,7 +65,7 @@ class Home extends StatelessWidget{
         body: TabBarView( // 配合TabBar使用
           children: <Widget>[
             ListViewDemo(),
-            Icon(Icons.change_history,size: 128.0,color: Colors.black12,),
+            BasicDemo(),
             Icon(Icons.directions_bike,size: 128.0,color: Colors.black12,),
           ],
         ),

@@ -1,16 +1,8 @@
-# hello_world
+# 我的第一个 `FlutterDemoApp`
 
-A new Flutter project.
+> 须知：本项目基于 `Flutter + VSCode + androidStudio` 在 `window` 上开发。
 
-## Getting Started
+### 搭建 `Flutter` 开发环境
 
-This project is a starting point for a Flutter application.
+#### 配置 `Flutter` 中国镜像
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
