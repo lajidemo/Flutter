@@ -1,4 +1,4 @@
-# 我的第一个 `FlutterDemoApp`
+# `FlutterDemoApp`
 
 > 须知：本项目基于 `Flutter + VSCode + androidStudio` 在 `window` 上开发。
 

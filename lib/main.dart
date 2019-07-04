@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hello_world/components/basic_demo.dart';
 import 'package:hello_world/components/bottom_navigation_bar_demo.dart';
 import 'package:hello_world/components/drower_demo.dart';
+import 'package:hello_world/components/layout_demo.dart';
 import 'package:hello_world/components/listview_demo.dart';
 
 void main() => runApp(MyApp());
@@ -66,7 +67,7 @@ class Home extends StatelessWidget{
           children: <Widget>[
             ListViewDemo(),
             BasicDemo(),
-            Icon(Icons.directions_bike,size: 128.0,color: Colors.black12,),
+            LayoutDemo(),
           ],
         ),
         // endDrawer: Text('this is drawer'), // 右边抽屉
