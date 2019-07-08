@@ -4,6 +4,7 @@ import 'package:hello_world/components/bottom_navigation_bar_demo.dart';
 import 'package:hello_world/components/drower_demo.dart';
 import 'package:hello_world/components/layout_demo.dart';
 import 'package:hello_world/components/listview_demo.dart';
+import 'package:hello_world/components/view_demo.dart';
 
 void main() => runApp(MyApp());
 
@@ -24,11 +25,10 @@ class MyApp extends StatelessWidget{
 }
 
 class Home extends StatelessWidget{
-
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 4,
       child: Scaffold(
         backgroundColor: Colors.grey[100],
         appBar: AppBar(
@@ -43,6 +43,7 @@ class Home extends StatelessWidget{
               Tab(icon: Icon(Icons.local_florist),),
               Tab(icon: Icon(Icons.change_history),),
               Tab(icon: Icon(Icons.directions_bike),),
+              Tab(icon: Icon(Icons.view_quilt),),
             ],
           ),
           /* leading: IconButton( // 头部左上角
@@ -68,6 +69,7 @@ class Home extends StatelessWidget{
             ListViewDemo(),
             BasicDemo(),
             LayoutDemo(),
+            ViewDemo(),
           ],
         ),
         // endDrawer: Text('this is drawer'), // 右边抽屉
