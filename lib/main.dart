@@ -4,6 +4,7 @@ import 'package:hello_world/components/bottom_navigation_bar_demo.dart';
 import 'package:hello_world/components/drower_demo.dart';
 import 'package:hello_world/components/layout_demo.dart';
 import 'package:hello_world/components/listview_demo.dart';
+import 'package:hello_world/components/sliver_demo.dart';
 import 'package:hello_world/components/view_demo.dart';
 
 void main() => runApp(MyApp());
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget{
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: '庄嘉仁',
+      // home: Home(),
       home: Home(),
       theme: ThemeData(
         primarySwatch: Colors.yellow, // 主题颜色
@@ -28,7 +30,7 @@ class Home extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 4,
+      length: 5,
       child: Scaffold(
         backgroundColor: Colors.grey[100],
         appBar: AppBar(
@@ -44,6 +46,7 @@ class Home extends StatelessWidget{
               Tab(icon: Icon(Icons.change_history),),
               Tab(icon: Icon(Icons.directions_bike),),
               Tab(icon: Icon(Icons.view_quilt),),
+              Tab(icon: Icon(Icons.select_all),),
             ],
           ),
           /* leading: IconButton( // 头部左上角
@@ -70,6 +73,7 @@ class Home extends StatelessWidget{
             BasicDemo(),
             LayoutDemo(),
             ViewDemo(),
+            SliverDemo(),
           ],
         ),
         // endDrawer: Text('this is drawer'), // 右边抽屉
