@@ -4,6 +4,7 @@ import 'package:hello_world/components/bottom_navigation_bar_demo.dart';
 import 'package:hello_world/components/drower_demo.dart';
 import 'package:hello_world/components/layout_demo.dart';
 import 'package:hello_world/components/listview_demo.dart';
+import 'package:hello_world/components/navigator_demo.dart';
 import 'package:hello_world/components/sliver_demo.dart';
 import 'package:hello_world/components/view_demo.dart';
 
@@ -16,7 +17,12 @@ class MyApp extends StatelessWidget{
       debugShowCheckedModeBanner: false,
       title: '庄嘉仁',
       // home: Home(),
-      home: Home(),
+      // home: NavigatorDemo(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => Home(),
+        '/about': (context) => Page(title: 'About'),
+      },
       theme: ThemeData(
         primarySwatch: Colors.yellow, // 主题颜色
         highlightColor: Color.fromRGBO(255, 255, 255, 0.5), // 点击区域的颜色
