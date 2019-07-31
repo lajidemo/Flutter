@@ -5,6 +5,7 @@ import 'package:hello_world/components/drower_demo.dart';
 import 'package:hello_world/components/form_demo.dart';
 import 'package:hello_world/components/layout_demo.dart';
 import 'package:hello_world/components/listview_demo.dart';
+import 'package:hello_world/components/material_components.dart';
 import 'package:hello_world/components/navigator_demo.dart';
 import 'package:hello_world/components/sliver_demo.dart';
 import 'package:hello_world/components/view_demo.dart';
@@ -19,11 +20,12 @@ class MyApp extends StatelessWidget{
       title: '庄嘉仁',
       // home: Home(),
       // home: NavigatorDemo(),
-      initialRoute: '/form',
+      initialRoute: '/mdc',
       routes: {
         '/': (context) => Home(),
         '/about': (context) => Page(title: 'About'),
         '/form': (context) => FormDemo(),
+        '/mdc': (context) => MaterialComponents(),
       },
       theme: ThemeData(
         primarySwatch: Colors.yellow, // 主题颜色
