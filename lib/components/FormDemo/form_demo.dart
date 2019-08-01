@@ -5,6 +5,10 @@ class FormDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       // body: ThemeDemo(),
+      appBar: AppBar(
+        title: Text('FormDemo'),
+        elevation: 0.0,
+      ),
       body: Theme(
         data: ThemeData( // 强制设置当前页面的主题色
           primaryColor: Colors.blueAccent,

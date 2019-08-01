@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:hello_world/components/basic_demo.dart';
 import 'package:hello_world/components/bottom_navigation_bar_demo.dart';
 import 'package:hello_world/components/drower_demo.dart';
-import 'package:hello_world/components/form_demo.dart';
 import 'package:hello_world/components/layout_demo.dart';
 import 'package:hello_world/components/listview_demo.dart';
 import 'package:hello_world/components/material_components.dart';
@@ -24,7 +23,6 @@ class MyApp extends StatelessWidget{
       routes: {
         '/': (context) => Home(),
         '/about': (context) => Page(title: 'About'),
-        '/form': (context) => FormDemo(),
         '/mdc': (context) => MaterialComponents(),
       },
       theme: ThemeData(
