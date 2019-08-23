@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class LayoutDemo extends StatelessWidget {
   @override
@@ -80,7 +83,62 @@ class StackDemo extends StatelessWidget { // 定位
             ), */
           ],
         ),
+        SizedBox(
+          height: 100,
+        ),
+        HttpDemo()
       ],
+    );
+  }
+}
+
+
+class HttpDemo extends StatefulWidget {
+  @override
+  _HttpDemoState createState() => _HttpDemoState();
+}
+
+class _HttpDemoState extends State<HttpDemo> {
+  String showResult = '';
+  Future<CommonModel> fetchPost() async { // 发送get请求
+    final response = await http.get('http://www.devio.org/io/flutter_app/json/test_common_model.json');
+    final result = json.decode(response.body);
+    return CommonModel.fromJson(result);
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        InkWell(
+          onTap: (){
+            fetchPost().then((CommonModel val){
+              setState(() {
+                showResult =  'icon: ${val.icon}\n title: ${val.title}\n url: ${val.url}\n statusBarColor: ${val.statusBarColor}\n hideAppBar: ${val.hideAppBar}\n';
+              });
+            });
+          },
+          child: Text('data'),
+        ),
+        Text(showResult),
+      ], 
+    );
+  }
+}
+
+class CommonModel { // 将json转为Map类，此方法为手动转，在json内容较为复杂时不便
+  final String icon;
+  final String title;
+  final String url;
+  final String statusBarColor;
+  final bool hideAppBar;
+  CommonModel({this.icon,this.title,this.url,this.statusBarColor,this.hideAppBar});
+  factory CommonModel.fromJson(Map<String, dynamic> json) {
+    return CommonModel(
+      icon: json['icon'],
+      title: json['title'],
+      url: json['url'],
+      statusBarColor: json['statusBarColor'],
+      hideAppBar: json['hideAppBar'],
     );
   }
 }
